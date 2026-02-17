@@ -2,11 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="src/style/styles.css">
 </head>
 <body>
+    <form id="productForm">
+        <div>
+            <label for="productName">Name</label>
+            <input type="text" id="productName">
+        </div>
+        <div>
+            <label for="productSKU">SKU</label>
+            <input type="text" id="productSKU">
+        </div>
+        <div>
+            <label for="productPrice">Price</label>
+            <input type="text" id="productPrice">
+        </div>
+
+        <button type="submit">
+            Submit Product
+        </button>
+    </form>
+
     <table>
         <thead>
             <th>Nombre</th>
@@ -18,14 +37,22 @@
         </tbody>
     </table>
 
-    <!-- Acá puedes buscar los archivos del proyecto -->
+    <!--
+        IMPORT MAP (para estudiantes):
+        Define alias para los módulos ES. El navegador resuelve "products", "form", "table"
+        a rutas relativas al documento (index.html). Debe aparecer ANTES de cualquier
+        <script type="module"> que use estos imports.
+    -->
     <script type="importmap">
         {
             "imports": {
-                "products": "./src/js/products.mjs"
+                "products": "./src/js/products.mjs",
+                "form": "./src/js/form.mjs",
+                "table": "./src/js/uiTable.mjs"
             }
         }
     </script>
+    <!-- type="module" hace que el script se ejecute en modo ES modules (permite import/export) y se difiere hasta que el DOM esté listo -->
     <script type="module" src="src/js/index.mjs"></script>
 </body>
 </html>
